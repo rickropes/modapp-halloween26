@@ -1,0 +1,303 @@
+[gd_scene format=3 uid="uid://v40pyplaxtk2"]
+
+[ext_resource type="Texture2D" uid="uid://c5vh56eaqgvgt" path="res://Features/Camera/Assets/BG/front.png" id="1_28aoi"]
+[ext_resource type="Script" uid="uid://blsjp4qs7pf6c" path="res://Camera.gd" id="1_eji0w"]
+[ext_resource type="Script" uid="uid://7lxto3p3rkpq" path="res://game_controller.gd" id="1_jnlp7"]
+[ext_resource type="Script" uid="uid://bidigbpaky7lv" path="res://Features/Bully/Cyan.gd" id="1_tilu5"]
+[ext_resource type="Script" uid="uid://cs4ohc32da1qp" path="res://Features/Bully/Magenta.gd" id="2_qt76e"]
+[ext_resource type="Script" uid="uid://cyvi6pl48kajv" path="res://Features/Bully/Yellow.gd" id="3_sq7yr"]
+[ext_resource type="Texture2D" uid="uid://bwcwirk00gotn" path="res://Features/Camera/Assets/BG/store.png" id="6_qw60f"]
+[ext_resource type="Texture2D" uid="uid://mhqrpfmykrdh" path="res://Features/Camera/Assets/BG/back.png" id="9_gd4vy"]
+[ext_resource type="Texture2D" uid="uid://r3hx7csl0xjw" path="res://Features/Camera/Assets/BG/lounge.png" id="11_eji0w"]
+[ext_resource type="Texture2D" uid="uid://cfpeldidj25xd" path="res://Features/Camera/Assets/b5.png" id="12_qwhpj"]
+[ext_resource type="Script" uid="uid://d36ns742vnkr3" path="res://CameraButton.gd" id="14_qwhpj"]
+[ext_resource type="Texture2D" uid="uid://4ud6hnoodjs6" path="res://Features/Camera/Assets/BG/wh1.png" id="14_sq7yr"]
+[ext_resource type="Texture2D" uid="uid://c70jc13bk2qf4" path="res://Features/Camera/Assets/BG/store2.png" id="15_blcw0"]
+[ext_resource type="Texture2D" uid="uid://b2jv5cb3ec77t" path="res://Features/Camera/Assets/BG/trash.png" id="16_50g4q"]
+[ext_resource type="Texture2D" uid="uid://dkl4rm3ahtybw" path="res://Features/Camera/Assets/BG/cornerL.png" id="17_50g4q"]
+[ext_resource type="Texture2D" uid="uid://bxa788wrjggas" path="res://Features/Camera/Assets/BG/wh2.png" id="20_po8fv"]
+[ext_resource type="Texture2D" uid="uid://cfrc3x1wcduhx" path="res://Features/Camera/Assets/BG/cornerR.png" id="23_ab83r"]
+[ext_resource type="Texture2D" uid="uid://cvp3ob7o7okxr" path="res://Features/Camera/map.png" id="29_8pgb7"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tilu5"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(1, 1, 1, 1)
+corner_detail = 1
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8pgb7"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(1, 1, 1, 1)
+corner_detail = 1
+
+[sub_resource type="Theme" id="Theme_8pgb7"]
+Button/styles/hover = SubResource("StyleBoxFlat_tilu5")
+Button/styles/normal = SubResource("StyleBoxFlat_8pgb7")
+Button/styles/pressed = SubResource("StyleBoxFlat_8pgb7")
+
+[node name="root" type="Node2D" unique_id=1032899469]
+
+[node name="LOGIC_NODES" type="Node" parent="." unique_id=829003961]
+
+[node name="Cyan" type="Node" parent="LOGIC_NODES" unique_id=895870380 node_paths=PackedStringArray("SpriteNode")]
+script = ExtResource("1_tilu5")
+AILevel = 15
+SpriteNode = NodePath("../../CameraScreen/CyanSprite")
+
+[node name="Magenta" type="Node" parent="LOGIC_NODES" unique_id=2120721622 node_paths=PackedStringArray("SpriteNode")]
+script = ExtResource("2_qt76e")
+AILevel = 15
+SpriteNode = NodePath("../../CameraScreen/MagentaSprite")
+
+[node name="Yellow" type="Node" parent="LOGIC_NODES" unique_id=1354130156 node_paths=PackedStringArray("SpriteNode")]
+script = ExtResource("3_sq7yr")
+AILevel = 15
+SpriteNode = NodePath("../../CameraScreen/YellowSprite")
+
+[node name="Camera" type="Node" parent="LOGIC_NODES" unique_id=1866929245]
+script = ExtResource("1_eji0w")
+
+[node name="GameController" type="Node2D" parent="." unique_id=154705562]
+z_index = 999
+script = ExtResource("1_jnlp7")
+
+[node name="CameraScreen" type="Node2D" parent="." unique_id=1805314868]
+position = Vector2(640, 423)
+scale = Vector2(0.55, 0.55)
+
+[node name="ColorRect" type="ColorRect" parent="CameraScreen" unique_id=1412761829]
+offset_left = -1104.0
+offset_top = -687.2727
+offset_right = 1104.0
+offset_bottom = 564.7273
+color = Color(0, 0, 0, 1)
+
+[node name="Backgrounds" type="Node2D" parent="CameraScreen" unique_id=400985184]
+
+[node name="WH1" type="Sprite2D" parent="CameraScreen/Backgrounds" unique_id=122838597]
+visible = false
+position = Vector2(0, -57.272705)
+texture = ExtResource("14_sq7yr")
+
+[node name="WH2" type="Sprite2D" parent="CameraScreen/Backgrounds" unique_id=1129702006]
+visible = false
+position = Vector2(0, -57.272705)
+texture = ExtResource("20_po8fv")
+
+[node name="LOUNGE" type="Sprite2D" parent="CameraScreen/Backgrounds" unique_id=1452103236]
+visible = false
+position = Vector2(0, -57.272705)
+texture = ExtResource("11_eji0w")
+
+[node name="STORE" type="Sprite2D" parent="CameraScreen/Backgrounds" unique_id=1265226913]
+visible = false
+position = Vector2(0, -57.272705)
+texture = ExtResource("6_qw60f")
+
+[node name="FRONT" type="Sprite2D" parent="CameraScreen/Backgrounds" unique_id=307937912]
+visible = false
+position = Vector2(0, -57.272705)
+texture = ExtResource("1_28aoi")
+
+[node name="CORNER_R" type="Sprite2D" parent="CameraScreen/Backgrounds" unique_id=1130716401]
+visible = false
+position = Vector2(0, -57.272705)
+texture = ExtResource("23_ab83r")
+
+[node name="CORNER_L" type="Sprite2D" parent="CameraScreen/Backgrounds" unique_id=1975517371]
+visible = false
+position = Vector2(0, -57.272705)
+texture = ExtResource("17_50g4q")
+
+[node name="BACK" type="Sprite2D" parent="CameraScreen/Backgrounds" unique_id=1924590224]
+visible = false
+position = Vector2(0, -57.272705)
+texture = ExtResource("9_gd4vy")
+
+[node name="BLACK" type="Sprite2D" parent="CameraScreen/Backgrounds" unique_id=1803966036]
+visible = false
+position = Vector2(0, -57.272705)
+texture = ExtResource("12_qwhpj")
+
+[node name="STORE2" type="Sprite2D" parent="CameraScreen/Backgrounds" unique_id=1255612896]
+visible = false
+position = Vector2(0, -57.272705)
+texture = ExtResource("15_blcw0")
+
+[node name="TRASH" type="Sprite2D" parent="CameraScreen/Backgrounds" unique_id=1624187378]
+visible = false
+position = Vector2(0, -57.272705)
+texture = ExtResource("16_50g4q")
+
+[node name="CyanSprite" type="Sprite2D" parent="CameraScreen" unique_id=1817970275]
+position = Vector2(0, -57.272724)
+
+[node name="MagentaSprite" type="Sprite2D" parent="CameraScreen" unique_id=1073805578]
+position = Vector2(0, -57.272724)
+
+[node name="YellowSprite" type="Sprite2D" parent="CameraScreen" unique_id=616972594]
+position = Vector2(0, -57.272724)
+
+[node name="Node2D" type="Node2D" parent="CameraScreen" unique_id=1382390794]
+position = Vector2(0, -57.272724)
+
+[node name="Map" type="Sprite2D" parent="CameraScreen/Node2D" unique_id=1237913231]
+modulate = Color(1, 1, 1, 0.6392157)
+position = Vector2(678.18176, 295.45453)
+scale = Vector2(1.8181818, 1.8181818)
+texture = ExtResource("29_8pgb7")
+flip_h = true
+
+[node name="ColorRect" type="ColorRect" parent="CameraScreen/Node2D" unique_id=1979382256]
+visible = false
+offset_left = 452.7273
+offset_top = 75.45453
+offset_right = 1087.2727
+offset_bottom = 582.7272
+color = Color(0.38431373, 0.38431373, 0.38431373, 0.87058824)
+
+[node name="Front" type="Button" parent="CameraScreen/Node2D" unique_id=1576644387]
+offset_left = 476.3637
+offset_top = 4.5454607
+offset_right = 618.3637
+offset_bottom = 65.545456
+theme = SubResource("Theme_8pgb7")
+theme_override_font_sizes/font_size = 28
+text = "FRONT"
+script = ExtResource("14_qwhpj")
+
+[node name="Store" type="Button" parent="CameraScreen/Node2D" unique_id=1135393642]
+offset_left = 638.18176
+offset_top = 66.36365
+offset_right = 780.18176
+offset_bottom = 127.36365
+theme = SubResource("Theme_8pgb7")
+theme_override_font_sizes/font_size = 28
+text = "STORE"
+script = ExtResource("14_qwhpj")
+Location = 1
+
+[node name="DressingRoom" type="Button" parent="CameraScreen/Node2D" unique_id=1497404198]
+offset_left = 323.6363
+offset_top = 182.7273
+offset_right = 465.63623
+offset_bottom = 243.7273
+theme = SubResource("Theme_8pgb7")
+theme_override_font_sizes/font_size = 28
+text = "DRESS R."
+script = ExtResource("14_qwhpj")
+Location = 10
+
+[node name="Back" type="Button" parent="CameraScreen/Node2D" unique_id=801539440]
+offset_left = 820.0
+offset_top = 95.45457
+offset_right = 961.9999
+offset_bottom = 156.45453
+theme = SubResource("Theme_8pgb7")
+theme_override_font_sizes/font_size = 28
+text = "BACK"
+script = ExtResource("14_qwhpj")
+Location = 11
+
+[node name="Lounge" type="Button" parent="CameraScreen/Node2D" unique_id=77566974]
+offset_left = 352.72736
+offset_top = 282.7273
+offset_right = 494.72736
+offset_bottom = 343.7273
+theme = SubResource("Theme_8pgb7")
+theme_override_font_sizes/font_size = 28
+text = "LOUNGE"
+script = ExtResource("14_qwhpj")
+Location = 3
+
+[node name="Wh1" type="Button" parent="CameraScreen/Node2D" unique_id=625886338]
+offset_left = 572.72723
+offset_top = 333.63635
+offset_right = 714.72723
+offset_bottom = 394.63635
+theme = SubResource("Theme_8pgb7")
+theme_override_font_sizes/font_size = 28
+text = "WH1"
+script = ExtResource("14_qwhpj")
+Location = 4
+
+[node name="Store2" type="Button" parent="CameraScreen/Node2D" unique_id=954655321]
+offset_left = 525.4545
+offset_top = 173.63637
+offset_right = 667.4545
+offset_bottom = 234.63637
+theme = SubResource("Theme_8pgb7")
+theme_override_font_sizes/font_size = 28
+text = "STORE2"
+script = ExtResource("14_qwhpj")
+Location = 2
+
+[node name="Wh2" type="Button" parent="CameraScreen/Node2D" unique_id=1115370012]
+offset_left = 867.2727
+offset_top = 371.8182
+offset_right = 1009.2727
+offset_bottom = 432.8182
+theme = SubResource("Theme_8pgb7")
+theme_override_font_sizes/font_size = 28
+text = "WH2"
+script = ExtResource("14_qwhpj")
+Location = 5
+
+[node name="CornerL" type="Button" parent="CameraScreen/Node2D" unique_id=219829097]
+offset_left = 769.09076
+offset_top = 457.27267
+offset_right = 911.09076
+offset_bottom = 518.2727
+theme = SubResource("Theme_8pgb7")
+theme_override_font_sizes/font_size = 28
+text = "CORN. R"
+script = ExtResource("14_qwhpj")
+Location = 8
+
+[node name="CornerR" type="Button" parent="CameraScreen/Node2D" unique_id=1905117054]
+offset_left = 452.72726
+offset_top = 528.18176
+offset_right = 594.7273
+offset_bottom = 589.1819
+theme = SubResource("Theme_8pgb7")
+theme_override_font_sizes/font_size = 28
+text = "CORN. L"
+script = ExtResource("14_qwhpj")
+Location = 7
+
+[node name="CornerR2" type="Button" parent="CameraScreen/Node2D" unique_id=1538678552]
+offset_left = 929.0909
+offset_top = 528.18176
+offset_right = 1071.091
+offset_bottom = 589.1818
+theme = SubResource("Theme_8pgb7")
+theme_override_font_sizes/font_size = 28
+text = "TRASH"
+script = ExtResource("14_qwhpj")
+Location = 6
+
+[connection signal="changedView" from="LOGIC_NODES/Camera" to="LOGIC_NODES/Cyan" method="_on_camera_changed_view"]
+[connection signal="changedView" from="LOGIC_NODES/Camera" to="LOGIC_NODES/Magenta" method="_on_camera_changed_view"]
+[connection signal="changedView" from="LOGIC_NODES/Camera" to="LOGIC_NODES/Yellow" method="_on_camera_changed_view"]
+[connection signal="pressed" from="CameraScreen/Node2D/Front" to="GameController" method="ChangeScreen" flags=18]
+[connection signal="pressed" from="CameraScreen/Node2D/Store" to="GameController" method="ChangeScreen" flags=18]
+[connection signal="pressed" from="CameraScreen/Node2D/DressingRoom" to="GameController" method="ChangeScreen" flags=18]
+[connection signal="pressed" from="CameraScreen/Node2D/Back" to="GameController" method="ChangeScreen" flags=18]
+[connection signal="pressed" from="CameraScreen/Node2D/Lounge" to="GameController" method="ChangeScreen" flags=18]
+[connection signal="pressed" from="CameraScreen/Node2D/Wh1" to="GameController" method="ChangeScreen" flags=18]
+[connection signal="pressed" from="CameraScreen/Node2D/Store2" to="GameController" method="ChangeScreen" flags=18]
+[connection signal="pressed" from="CameraScreen/Node2D/Wh2" to="GameController" method="ChangeScreen" flags=18]
+[connection signal="pressed" from="CameraScreen/Node2D/CornerL" to="GameController" method="ChangeScreen" flags=18]
+[connection signal="pressed" from="CameraScreen/Node2D/CornerR" to="GameController" method="ChangeScreen" flags=18]
+[connection signal="pressed" from="CameraScreen/Node2D/CornerR2" to="GameController" method="ChangeScreen" flags=18]
