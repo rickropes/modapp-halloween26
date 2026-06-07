@@ -4,17 +4,17 @@ extends Node
 @onready var cyan: Bully = $"../Cyan"
 
 @onready var VIEWS = {
-	Constants.Locations.FRONT: $"../../CameraScreen/Backgrounds/FRONT",
-	Constants.Locations.STORE: $"../../CameraScreen/Backgrounds/STORE",
-	Constants.Locations.WH1: $"../../CameraScreen/Backgrounds/WH1",
-	Constants.Locations.WH2: $"../../CameraScreen/Backgrounds/WH2",
-	Constants.Locations.LOUNGE: $"../../CameraScreen/Backgrounds/LOUNGE",
-	Constants.Locations.CORNERR: $"../../CameraScreen/Backgrounds/CORNER_R",
-	Constants.Locations.CORNERL: $"../../CameraScreen/Backgrounds/CORNER_L",
-	Constants.Locations.BACK: $"../../CameraScreen/Backgrounds/BACK",
-	Constants.Locations.BLACK: $"../../CameraScreen/Backgrounds/BLACK",
-	Constants.Locations.STORE2: $"../../CameraScreen/Backgrounds/STORE2",
-	Constants.Locations.TRASH: $"../../CameraScreen/Backgrounds/TRASH",
+	Constants.Locations.FRONT: $"../../CameraScreen/Content/Backgrounds/FRONT",
+	Constants.Locations.STORE: $"../../CameraScreen/Content/Backgrounds/STORE",
+	Constants.Locations.WH1: $"../../CameraScreen/Content/Backgrounds/WH1",
+	Constants.Locations.WH2: $"../../CameraScreen/Content/Backgrounds/WH2",
+	Constants.Locations.LOUNGE: $"../../CameraScreen/Content/Backgrounds/LOUNGE",
+	Constants.Locations.CORNERR: $"../../CameraScreen/Content/Backgrounds/CORNER_R",
+	Constants.Locations.CORNERL: $"../../CameraScreen/Content/Backgrounds/CORNER_L",
+	Constants.Locations.BACK: $"../../CameraScreen/Content/Backgrounds/BACK",
+	Constants.Locations.BLACK: $"../../CameraScreen/Content/Backgrounds/BLACK",
+	Constants.Locations.STORE2: $"../../CameraScreen/Content/Backgrounds/STORE2",
+	Constants.Locations.TRASH: $"../../CameraScreen/Content/Backgrounds/TRASH",
 }
 
 var Position = Constants.Locations.FRONT
